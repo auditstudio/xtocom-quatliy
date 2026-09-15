@@ -16,7 +16,7 @@ export function Hero() {
         <img 
           src="https://i.ibb.co/jvzFShxQ/image.jpg" 
           alt="XTOCOM Engineering" 
-          className="w-full h-full object-cover opacity-30" 
+          className="absolute inset-0 w-full h-full object-cover object-center scale-[1.2] opacity-30" 
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#06412D]/95 to-[#06412D]/50"></div>
       </div>
