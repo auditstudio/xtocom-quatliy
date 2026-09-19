@@ -1,10 +1,11 @@
-import { ShieldCheck, Wrench, Zap, Leaf, HeartHandshake, Sun, Battery, HardHat } from 'lucide-react';
+import { ShieldCheck, Wrench, Zap, Leaf, HeartHandshake, Sun, Battery, HardHat, Camera, Lightbulb, GraduationCap, ArrowRight, Mail } from 'lucide-react';
+import trainingImage from '../assets/images/technician_training_1789838103856.jpg';
 
 export function Services() {
   const services = [
     {
-      title: "ELECTRICAL INSTALLATION",
-      desc: "Wiring, rewiring, lighting and power distribution solutions for residential, commercial and industrial applications.",
+      title: "HOME & INDUSTRIAL WIRING",
+      desc: "Expert wiring, rewiring, and power distribution solutions for residential, commercial and industrial applications.",
       icon: Zap,
       image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800"
     },
@@ -12,13 +13,25 @@ export function Services() {
       title: "SOLAR POWER SYSTEMS",
       desc: "Design, supply, installation and commissioning of efficient solar power systems tailored to customer needs.",
       icon: Sun,
-      image: "https://i.ibb.co/jvzFShxQ/image.jpg"
+      image: "https://i.ibb.co/4nnfK67C/image.jpg"
     },
     {
       title: "INVERTER & BATTERY SYSTEMS",
       desc: "Reliable inverter and battery solutions designed for dependable backup power and efficient energy management.",
       icon: Battery,
-      image: "https://i.ibb.co/MDRHg6Xj/image.jpg"
+      image: "https://i.ibb.co/QvJ3hTYF/image.jpg"
+    },
+    {
+      title: "SOLAR STREET LIGHTS PROJECT",
+      desc: "Turnkey design, supply, and installation of durable solar street lighting projects for communities, roads, and facilities.",
+      icon: Lightbulb,
+      image: "https://i.ibb.co/tTNmCCkf/image.jpg"
+    },
+    {
+      title: "CAMERA INSTALLATION",
+      desc: "Professional installation of CCTV and high-resolution security camera systems to keep your property protected.",
+      icon: Camera,
+      image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "MAINTENANCE & SERVICES",
@@ -31,6 +44,12 @@ export function Services() {
       desc: "Project planning, system design, technical assessment and professional engineering consultancy.",
       icon: HardHat,
       image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      title: "TECHNICAL SKILLS TRAINING",
+      desc: "Hands-on practical training programs—we train people in any of these skills (solar, wiring, inverters, and cameras).",
+      icon: GraduationCap,
+      image: trainingImage
     }
   ];
 
@@ -42,39 +61,37 @@ export function Services() {
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#06412D]">OUR PROFESSIONAL SERVICES</h2>
         </div>
 
-        {/* Top row - 3 items */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.slice(0, 3).map((service, i) => (
-            <div key={i} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group border border-gray-100">
-              <div className="relative h-56 overflow-hidden">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {services.map((service, i) => (
+            <div key={i} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group border border-gray-100 flex flex-col">
+              <div className="relative h-48 overflow-hidden shrink-0">
                 <div className="absolute inset-0 bg-[#06412D]/30 group-hover:bg-[#06412D]/10 transition-colors z-10" />
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                <img src={service.image} alt={service.title} referrerPolicy="no-referrer" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
                 <div className="absolute -bottom-6 left-6 bg-[#D4AF37] p-4 rounded-lg shadow-lg z-20 text-[#06412D]">
-                  <service.icon className="w-8 h-8" />
+                  <service.icon className="w-6 h-6" />
                 </div>
               </div>
-              <div className="pt-12 pb-8 px-8">
-                <h3 className="text-xl font-bold text-[#06412D] mb-4 line-clamp-1">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom row - 2 items centered */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mt-8 lg:w-2/3 mx-auto">
-          {services.slice(3, 5).map((service, i) => (
-            <div key={i} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group border border-gray-100">
-              <div className="relative h-56 overflow-hidden">
-                <div className="absolute inset-0 bg-[#06412D]/30 group-hover:bg-[#06412D]/10 transition-colors z-10" />
-                <img src={service.image} alt={service.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute -bottom-6 left-6 bg-[#D4AF37] p-4 rounded-lg shadow-lg z-20 text-[#06412D]">
-                  <service.icon className="w-8 h-8" />
+              <div className="pt-12 pb-6 px-6 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-[#06412D] mb-3 line-clamp-2">{service.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">{service.desc}</p>
                 </div>
-              </div>
-              <div className="pt-12 pb-8 px-8">
-                <h3 className="text-xl font-bold text-[#06412D] mb-4 line-clamp-1">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.desc}</p>
+                <div className="pt-4 border-t border-gray-100 flex items-center justify-between gap-2">
+                  <a 
+                    href="#contact"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#06412D] hover:text-[#D4AF37] transition-colors"
+                  >
+                    <span>Request Quote</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                  <a 
+                    href={`mailto:peacesopeaceso@gmail.com?subject=${encodeURIComponent(`Inquiry: ${service.title}`)}&body=${encodeURIComponent(`Hello XTOCOM Quality Base Enterprise,\n\nI am interested in your ${service.title} service.\n\nPlease contact me with more information.\n\nThank you!`)}`}
+                    title={`Send Email inquiry for ${service.title}`}
+                    className="w-9 h-9 rounded-lg bg-slate-100 hover:bg-[#D4AF37] text-[#06412D] flex items-center justify-center transition-colors shadow-xs"
+                  >
+                    <Mail className="w-4 h-4" />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
@@ -153,9 +170,17 @@ export function Projects() {
             <h3 className="text-2xl font-bold text-[#06412D] mb-2">NEED A SIMILAR SOLUTION?</h3>
             <p className="text-gray-600">Contact our engineering team to discuss your project requirements.</p>
           </div>
-          <a href="#contact" className="bg-[#06412D] hover:bg-[#083D2A] text-white px-8 py-4 rounded font-bold text-lg transition-colors whitespace-nowrap">
-            CONTACT US
-          </a>
+          <div className="flex flex-wrap gap-3 justify-center md:justify-end">
+            <a href="#contact" className="bg-[#06412D] hover:bg-[#083D2A] text-white px-7 py-4 rounded font-bold text-base md:text-lg transition-colors whitespace-nowrap">
+              CONTACT US
+            </a>
+            <a 
+              href="mailto:peacesopeaceso@gmail.com?subject=Project%20Inquiry%20from%20Website&body=Hello%20XTOCOM%2C%0A%0AI%20am%20interested%20in%20discussing%20a%20project%20similar%20to%20your%20showcase.%20Please%20contact%20me." 
+              className="bg-[#D4AF37] hover:bg-[#b5952f] text-[#06412D] px-6 py-4 rounded font-bold text-base md:text-lg transition-colors flex items-center gap-2 whitespace-nowrap shadow-sm"
+            >
+              <Mail className="w-5 h-5" /> EMAIL US
+            </a>
+          </div>
         </div>
       </div>
     </section>
