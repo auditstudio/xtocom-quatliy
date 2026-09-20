@@ -1,5 +1,6 @@
 import { ShieldCheck, Wrench, Zap, Leaf, HeartHandshake, Sun, Battery, HardHat, Camera, Lightbulb, GraduationCap, ArrowRight, Mail } from 'lucide-react';
 import trainingImage from '../assets/images/technician_training_1789838103856.jpg';
+import cameraInstallationImage from '../assets/images/camera_installation_1789898472234.jpg';
 
 export function Services() {
   const services = [
@@ -138,7 +139,7 @@ export function Projects() {
   const projects = [
     { title: "Solar Power Installation", image: "https://i.ibb.co/FqWnRfbB/image.jpg" },
     { title: "Inverter Installation", image: "https://i.ibb.co/SX7MvgZm/image.jpg" },
-    { title: "Battery Installation", image: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80&w=800" },
+    { title: "Camera Installation (CCTV)", image: cameraInstallationImage },
     { title: "Electrical Installation", image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800" },
     { title: "Commercial Solar Projects", image: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=800" },
     { title: "Maintenance & Servicing", image: "https://i.ibb.co/N2jymgws/image.jpg" }
@@ -155,7 +156,7 @@ export function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {projects.map((proj, i) => (
             <div key={i} className="group relative h-72 rounded-xl overflow-hidden shadow-md">
-              <img src={proj.image} alt={proj.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+              <img src={proj.image} alt={proj.title} referrerPolicy="no-referrer" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#06412D]/90 via-[#06412D]/40 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-6 w-full translate-y-2 group-hover:translate-y-0 transition-transform">
                 <h3 className="text-xl font-bold text-white mb-1">{proj.title}</h3>
